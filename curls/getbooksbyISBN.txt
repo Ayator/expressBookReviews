@@ -1,0 +1,6 @@
+curl https://vdayalavera-5000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/isbn/1
+{
+    "author": "Chinua Achebe",
+    "title": "Things Fall Apart",
+    "reviews": {}
+}
