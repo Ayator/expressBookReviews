@@ -62,7 +62,7 @@ regd_users.put("/auth/review/:isbn", (req, res) => {
       filtered_book['reviews'][reviewer] = review;
       books[isbn] = filtered_book;
     }
-    return res.status(200).send(`The review for the book with ISBN  ${isbn} has been added/updated.`);
+    return res.status(200).json({ message: "Review added/updated successfully", review: review });
   }
   else {
     return res.status(404).json({ message: "Book not found" });
@@ -76,7 +76,7 @@ regd_users.delete("/auth/review/:isbn", (req, res) => {
     let reviewer = req.session.authorization['username'];
     delete filtered_book['reviews'][reviewer];
     books[isbn] = filtered_book;
-    return res.status(200).send(`The review for the book with ISBN  ${isbn} has been deleted.`);
+    return res.status(200).json({ message: "Review deleted successfully" });
   }
   else {
     return res.status(404).json({ message: "Book not found" });
